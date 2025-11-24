@@ -40,6 +40,11 @@ export class InvoiceService {
     }
     const posId = dto.posId ?? v.posId;
     const dateTime = dto.dateTime ?? new Date().toISOString();
+
+const totalAmount = dto.items.reduce((sum, item) => {
+  return sum + item.price * item.quantity;
+}, 0);
+
     const created = new this.invoiceModel({
       vendorId: v._id.toString(),
       invoiceNumber,
@@ -47,7 +52,7 @@ export class InvoiceService {
       dateTime,
       buyer: dto.buyer,
       items: dto.items,
-      totalAmount: dto.totalAmount,
+      totalAmount: totalAmount ,
       currency: dto.currency,
       status: 'PENDING',
     });
@@ -74,6 +79,7 @@ export class InvoiceService {
       await saved.save();
       throw new InternalServerErrorException('Failed to submit invoice to FBR');
     }
+
     return saved;
   }
 

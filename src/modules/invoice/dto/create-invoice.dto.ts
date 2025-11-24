@@ -57,10 +57,6 @@ export class CreateInvoiceDto {
   items: InvoiceItemDto[];
 
   @ApiProperty()
-  @IsNumber()
-  totalAmount: number;
-
-  @ApiProperty()
   @IsString()
   currency: string;
 }
