@@ -41,10 +41,10 @@ export class InvoiceService {
     const posId = dto.posId ?? v.posId;
     const dateTime = dto.dateTime ?? new Date().toISOString();
 
-const totalAmount = dto.items.reduce((sum, item) => {
-  return sum + item.price * item.quantity;
-}, 0);
-
+   const totalAmount = dto.items.reduce((sum, item) => {
+    const tax = (item.price * item.taxRate) / 100;
+    return sum + item.price * item.quantity + tax;
+   }, 0);
     const created = new this.invoiceModel({
       vendorId: v._id.toString(),
       invoiceNumber,
