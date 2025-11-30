@@ -1,0 +1,23 @@
+import { ValidationPipe } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { AppModule } from './app.module';
+async function bootstrap() {
+  // create nest app
+  const app = await NestFactory.create(AppModule);
+  //global validation pipe for DTOs
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }));
+  //swagger
+  const config = new DocumentBuilder()
+    .setTitle('FBR Invoice - Auth (Vendor signup)')
+    .setDescription('Vendor signup API (NTN + Security key generation)')
+    .setVersion('1.0')
+    .addTag('auth')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
+  await app.listen(3000);
+  console.log(`Server listening on http://localhost:3000`);
+  console.log(`Swagger UI available at http://localhost:3000/api`);
+}
+bootstrap();
