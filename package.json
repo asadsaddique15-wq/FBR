@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "fbr-invoice",
+=======
+  "name": "fbr-digital-invoicing",
+>>>>>>> 5d688854065ec36e355ff792028a8e7680bff78e
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -20,7 +24,11 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@nestjs-modules/mailer": "^2.0.2",
+=======
+    "@nestjs/axios": "^4.0.1",
+>>>>>>> 5d688854065ec36e355ff792028a8e7680bff78e
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
@@ -29,6 +37,7 @@
     "@nestjs/passport": "^11.0.5",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/swagger": "^11.2.3",
+<<<<<<< HEAD
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "class-transformer": "^0.5.1",
@@ -37,11 +46,21 @@
     "mongoose": "^8.20.1",
     "nanoid": "^5.1.6",
     "nodemailer": "^7.0.11",
+=======
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "mongoose": "^8.20.1",
+>>>>>>> 5d688854065ec36e355ff792028a8e7680bff78e
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
+<<<<<<< HEAD
     "swagger-ui-express": "^5.0.1"
+=======
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^13.0.0"
+>>>>>>> 5d688854065ec36e355ff792028a8e7680bff78e
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -49,6 +68,7 @@
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",
+<<<<<<< HEAD
     "@types/bcrypt": "^6.0.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/express": "^5.0.0",
@@ -58,6 +78,14 @@
     "@types/nodemailer": "^7.0.4",
     "@types/passport-jwt": "^4.0.1",
     "@types/supertest": "^6.0.2",
+=======
+    "@types/express": "^5.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^22.10.7",
+    "@types/supertest": "^6.0.2",
+    "@types/uuid": "^10.0.0",
+>>>>>>> 5d688854065ec36e355ff792028a8e7680bff78e
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.2",
